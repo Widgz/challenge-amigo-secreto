@@ -4,8 +4,20 @@ let listaDeNomes = [];
 let amigo = document.getElementById("amigo").value;
 let amigosAdicionados = document.getElementById("listaAmigos");
 
+function limparCampo() {
+    amigo = document.querySelector("input");
+    amigo.value = "";
+}
+
 function adicionarAmigo() {
     
     let amigo = document.getElementById("amigo").value;
-    listaDeNomes.push(amigo);
+
+    if (amigo == "") {
+        alert("Por favor, insira um nome")
+    } else {
+        listaDeNomes.push(amigo);
+        limparCampo();        
+    }
+    
 }
