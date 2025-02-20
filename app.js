@@ -27,11 +27,22 @@ function adicionarAmigo() {
     let amigo = document.getElementById("amigo").value;
 
     if (amigo == "") {
-        alert("Por favor, insira um nome")
+        alert("Por favor, insira um nome");
     } else {
         listaDeNomes.push(amigo);
         limparCampo();        
     }
     
     exibirNomesNaLista();
+}
+
+function sortearAmigo() {
+
+    if (listaDeNomes.length == 0) {
+        alert("Por favor, insira nomes para sorteio");
+    } else {
+        let nomeIndex = parseInt(Math.random() * listaDeNomes.length);
+         let resultado = document.getElementById("resultado");
+        resultado.innerHTML = listaDeNomes[nomeIndex];
+    }
 }
