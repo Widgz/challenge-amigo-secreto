@@ -2,7 +2,20 @@
 
 let listaDeNomes = [];
 let amigo = document.getElementById("amigo").value;
-let amigosAdicionados = document.getElementById("listaAmigos");
+
+function exibirNomesNaLista() {
+
+    let listaParaExibir = document.getElementById("listaAmigos");
+    listaParaExibir.innerHTML = "";
+
+    for (let i = 0; i < listaDeNomes.length; i++) {
+
+        let li = document.createElement("li");
+        li.textContent = listaDeNomes[i];
+        listaParaExibir.appendChild(li);
+    }
+
+}
 
 function limparCampo() {
     amigo = document.querySelector("input");
@@ -20,4 +33,5 @@ function adicionarAmigo() {
         limparCampo();        
     }
     
+    exibirNomesNaLista();
 }
